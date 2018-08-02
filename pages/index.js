@@ -1,14 +1,37 @@
 import React, { Component } from "react";
+
 import Head from "next/head";
 import dynamic from "next/dynamic";
+
 const Parallax = dynamic(import("../component/Parallax"), { ssr: false });
 import NavBar from "../component/NavBar";
 import BlogTab from "../component/BlogTab";
+import TagButton from "../component/TagButton";
+
 export default class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tagButton: "All"
+    };
+
+    this.onClickTagButtons = this.onClickTagButtons.bind(this);
+  }
+  onClickTagButtons(type) {
+    this.setState({
+      tagButton: type
+    });
+  }
   render() {
     return (
       <div>
         <Head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
           <meta
             name="description"
             content="Blogs about daily challenges faced in developers life"
@@ -17,62 +40,70 @@ export default class Index extends Component {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
           />
-          <link rel="stylesheet" href="static/styles.css" />
+          <link rel="stylesheet" href="static/styles/styles.css" />
         </Head>
         <NavBar />
-        <Parallax />
+        <Parallax name="images/HomePage/index-parallex.jpg" />
         <h1>Get it Done</h1>
         <div className="container">
+          <div className="row">
+            <span onClick={() => this.onClickTagButtons("All")}>
+              <TagButton name="All" />
+            </span>
+            <span onClick={() => this.onClickTagButtons("Web Developement")}>
+              <TagButton name="Web Developement" />
+            </span>
+            <span
+              onClick={() => this.onClickTagButtons("Andorid Developement")}
+            >
+              <TagButton name="Andorid Developement" />
+            </span>
+            <span onClick={() => this.onClickTagButtons("Amazon Web Services")}>
+              <TagButton name="Amazon Web Services" />
+            </span>
+          </div>
           <div className="row">
             <div className="col s12 m12 l4">
               <BlogTab
                 type="medium"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="large"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="medium"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
+                tag={
+                  this.state.tagButton == "Andorid Developement" ||
+                  this.state.tagButton == "All"
+                    ? ""
+                    : "hide"
+                }
+                tittle="React Native And Redux"
+                desc="Managing state can be very though in React, it gets only worse in React Native."
+                img="static/images/HomePage/ReactNativeAndRedux.jpg"
+                link="/ReactNativeAndRedux"
               />
             </div>
             <div className="col s12 m12 l4">
               <BlogTab
+                tag={
+                  this.state.tagButton == "Amazon Web Services" ||
+                  this.state.tagButton == "All"
+                    ? ""
+                    : "hide"
+                }
                 type="large"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="medium"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="medium"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
+                tittle="Setting Up EC2"
+                desc="Amazon Web Services provides free hosting for the first year, learn to know how to set up using Node.js using NGINX as a reverse proxy and next.js for server side rendering, also get a free SSL certificate form Let's Encrypt "
+                img="static/images/HomePage/AWS.jpg"
               />
             </div>
             <div className="col s12 m12 l4">
               <BlogTab
+                tag={
+                  this.state.tagButton == "Web Developement" ||
+                  this.state.tagButton == "All"
+                    ? ""
+                    : "hide"
+                }
                 type="medium"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="large"
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
-              />
-              <BlogTab
-                type="large "
-                desc="I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-                img="static/index-BG.jpg"
+                tittle="SSR in React Apps"
+                desc="Learn how to use Next.js, the React way. Get your SEO on point"
+                img="static/images/HomePage/NextJS.jpg"
               />
             </div>
           </div>

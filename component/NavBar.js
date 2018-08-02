@@ -14,7 +14,7 @@ export default class NavBar extends Component {
               <li>
                 <a href="/">Kanishk Srivastava</a>
               </li>
-            </ul>
+            </ul>`
           </div>
         </nav>
       </div>
