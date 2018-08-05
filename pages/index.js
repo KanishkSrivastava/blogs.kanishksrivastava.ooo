@@ -40,10 +40,10 @@ export default class Index extends Component {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
           />
-          <link rel="stylesheet" href="static/styles/styles.css" />
+          <link rel="stylesheet" href="static/styles.css" />
         </Head>
         <NavBar />
-        <Parallax name="images/HomePage/index-parallex.jpg" />
+        <Parallax name="index-parallex.jpg" />
         <h1>Get it Done</h1>
         <div className="container">
           <div className="row">
@@ -74,7 +74,7 @@ export default class Index extends Component {
                 }
                 tittle="React Native And Redux"
                 desc="Managing state can be very though in React, it gets only worse in React Native."
-                img="static/images/HomePage/ReactNativeAndRedux.jpg"
+                img="static/ReactNativeAndRedux.jpg"
                 link="/ReactNativeAndRedux"
               />
             </div>
@@ -89,7 +89,7 @@ export default class Index extends Component {
                 type="large"
                 tittle="Setting Up EC2"
                 desc="Amazon Web Services provides free hosting for the first year, learn to know how to set up using Node.js using NGINX as a reverse proxy and next.js for server side rendering, also get a free SSL certificate form Let's Encrypt "
-                img="static/images/HomePage/AWS.jpg"
+                img="static/AWS.jpg"
               />
             </div>
             <div className="col s12 m12 l4">
@@ -103,7 +103,7 @@ export default class Index extends Component {
                 type="medium"
                 tittle="SSR in React Apps"
                 desc="Learn how to use Next.js, the React way. Get your SEO on point"
-                img="static/images/HomePage/NextJS.jpg"
+                img="static/NextJS.jpg"
               />
             </div>
           </div>

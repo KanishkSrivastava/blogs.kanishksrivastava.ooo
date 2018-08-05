@@ -27,11 +27,11 @@ export default class ReactNativeAndRedux extends Component {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
           />
-          <link rel="stylesheet" href="static/styles/docco.css" />
-          <link rel="stylesheet" href="static/styles/styles.css" />
+          <link rel="stylesheet" href="static/docco.css" />
+          <link rel="stylesheet" href="static/styles.css" />
         </Head>
         <NavBar />
-        <Parallax name="images/Blogs/ReactNativeAndRedux/ReactNative.jpg" />
+        <Parallax name="ReactNative.jpg" />
         <div className="row">
           <div className="col s1 m1 l1" />
           <div className="col s10 m9 l9">
@@ -49,7 +49,7 @@ export default class ReactNativeAndRedux extends Component {
               <img
                 alt="Image explaning Redux Store"
                 className="responsive-img image"
-                src="../static/images/Blogs/ReactNativeAndRedux/ReduxStore.jpg"
+                src="static/ReduxStore.jpg"
               />
               <h4>React Native</h4>
               <span className="textCode center-block">
@@ -84,7 +84,7 @@ export default class ReactNativeAndRedux extends Component {
               <img
                 alt="image explaning folder structure of the app"
                 className="responsive-img image"
-                src="../static/images/Blogs/ReactNativeAndRedux/FolderStructureRNandRedux.jpg"
+                src="static/FolderStructureRNandRedux.jpg"
               />
               <span className="text center-block">
                 Let us see how data flows in Redux and how we can request data
@@ -93,7 +93,7 @@ export default class ReactNativeAndRedux extends Component {
               <img
                 alt="explaning how we connect to our redux store"
                 className="responsive-img image"
-                src="../static/images/Blogs/ReactNativeAndRedux/Redux.jpg"
+                src="static/Redux.jpg"
               />
               <h4>Getting Started</h4>
               <span className="text center-block">1. Actions</span>
