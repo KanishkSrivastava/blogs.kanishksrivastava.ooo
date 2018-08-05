@@ -26,6 +26,10 @@ export default class Index extends Component {
     return (
       <div>
         <Head>
+          <meta
+            name="google-site-verification"
+            content="2DdkGf-dPXjMzlJR3xsPdPuoVCPt-iPo_5bDJO4hUnI"
+          />
           <meta charset="UTF-8" />
           <meta
             name="viewport"
